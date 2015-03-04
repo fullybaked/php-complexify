@@ -5,9 +5,16 @@
     "authors": [
         {
             "name": "Michael Crumley",
-            "email": "mcrumley@example.com"
+        },
+        {
+            "name": "Dave Baker"
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Complexify\\": "src/Complexify/"
+        }
+    }
 }
