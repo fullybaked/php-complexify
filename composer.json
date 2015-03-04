@@ -1,0 +1,13 @@
+{
+    "name": "fullybaked/php-complexify",
+    "description": "PHP port of Dan Palmer's jquery.complexify.js by Michael Crumley",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Crumley",
+            "email": "mcrumley@example.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
