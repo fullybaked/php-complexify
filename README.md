@@ -3,20 +3,35 @@ php-complexify
 
 PHP port of Dan Palmer's [jquery.complexify.js](https://github.com/danpalmer/jquery.complexify.js/)
 
-## Composer
-You can install Complexify via composer by running the following command in the root of your
-project, where the `composer.json` file resides.
+## Fork
 
-```
-composer require fullybaked/php-complexify
+This fork of [mcrumley/php-complexify](https://github.com/mcrumley/php-complexify) adds no new code,
+but adds support to use this library as a composer package in your projects.
+
+## Composer
+
+As Complexify is not yet on Packagist.org to install it via composer you need to add a `repositories`
+section to your `composer.json` as well as adding it to the required packages list.  Once it is on
+Packagist this document will be updated with the more standard install instructions.
+
+```json
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/fullybaked/php-complexify"
+    }
+],
+"require": {
+    "fullybaked/php-complexify": "dev-master"
+}
 ```
 
 ## Usage
 
-### As a standalone lib
-
 ```php
-$check = new \Complexify\Complexify();
+use Complexify\Complexify;
+
+$check = new Complexify();
 $result = $check->evaluateSecurity('correct horse battery staple');
 
 echo round($result->complexity, 1) . '% ';
@@ -25,16 +40,6 @@ if ($result->valid) {
 } else {
     echo 'NOT VALID: '.implode(', ', $result->errors);
 }
-```
-
-### With composer install and autoloading
-
-```php
-use Complexify\Complexify;
-
-$check = new Complexify();
-// -- snip -- 
-// all other examples are valid once you have your instance of Complexify
 ```
 
 ## Configuration
